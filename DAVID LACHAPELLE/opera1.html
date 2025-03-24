@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David LaChapelle - Galleria</title>
+
+    <!-- Font & Bootstrap Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.html">
+    <link rel="stylesheet" href="opere.html">
+
+    <!-- Dublin Core-->
+    <meta name="DC.title" content="David LaChapelle - Galleria">
+    <meta name="DC.creator" content="Ilaria Iezzi">
+    <meta name="DC.subject" content="Fotografia, Arte, Cultura Pop">
+    <meta name="DC.description" content="Una collezione digitale delle opere di David LaChapelle.">
+    <meta name="DC.publisher" content="David Lachapelle">
+    <meta name="DC.date" content="2024-03-10">
+    <meta name="DC.type" content="Website">
+    <meta name="DC.format" content="text/html">
+    <meta name="DC.language" content="it">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea;
+            padding: 50px;
+        }
+
+        .header {
+            padding: 10px 0;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .details {
+            font-size: 1.1rem;
+        }
+        .btn-dark {
+            background-color: #333;
+            border: none;
+        }
+        .btn-dark:hover {
+            background-color: #555;
+        }
+        .accordion-button {
+            font-weight: bold;
+        }
+
+
+
+        /* Stili per la sezione commenti */
+        #commentsSection {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #commentForm {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Pulsante di invio */
+        #commentForm button {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 10px;
+        }
+
+
+        /* Footer */
+        .footer {
+            background-color: #111;
+            color: #ddd;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .footer .social-links a {
+            color: #ddd;
+            margin: 0 8px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.2s;
+        }
+
+        .footer .social-links a:hover {
+            color: rgb(148, 22, 148);
+            transform: scale(1.1);
+        }
+
+
+        /* Social Media Icons */
+        .social-links i {
+            transition: transform 0.3s;
+        }
+
+        .social-links i:hover {
+            transform: scale(1.2);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header shadow-sm">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo/Nome Sito -->
+                <a href="index.html" class="text-decoration-none text-dark fw-bold fs-4">David LaChapelle</a>
+                
+                <!-- Icone Account e Lista Desideri -->
+                <div>
+                    <a href="login.html" class="text-dark me-3"><i class="fas fa-heart fs-4"></i></a>
+                    <a href="login.html" class="text-dark"><i class="fas fa-user fs-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="opere.html">Opere</a></li>
+                    <li class="nav-item"><a class="nav-link" href="artista.html">Artista</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb Section -->
+    <nav aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb p-3 rounded-3 d-flex">
+                <li class="breadcrumb-item">
+                    <a href="index.html" class="text-decoration-none text-dark hover-text-primary">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="opere.html" class="text-decoration-none text-dark hover-text-primary">Opere</a>
+                </li>
+                <li class="breadcrumb-item active text-muted" aria-current="page">
+                    Tower of Babel
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+
+
+    <!-- Contenuto principale -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Carosello Immagini -->
+            <div class="col-md-6">
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="opera1.jpg" class="d-block w-100" alt="Opera 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="opera1.2.jpg" class="d-block w-100" alt="Opera 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="opera1.3.jpg" class="d-block w-100" alt="Opera 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Informazioni Opera -->
+            <div class="col-md-6">
+                <h1 class="title">Tower of Babel</h1>
+                <p class="details">Artista: David LaChapelle</p>
+                <p class="details">Base: 127 cm | Altezza: 127 cm</p>
+                <button class="btn btn-dark w-100 mb-2">MOSTRA PREZZO</button>
+                <a href="login.html" class="btn btn-outline-dark w-100">AGGIUNGI ALLA LISTA DESIDERI</a>
+
+                
+                <!-- Sezioni espandibili -->
+                <div class="accordion mt-4" id="infoAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                L'OPERA
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                            <div class="accordion-body">
+                                <h3 class="fw-bold">DAVID LACHAPELLE - TOWER OF BABEL</h3>
+                                <p>
+                                    L'opera Tower of Babel di David LaChapelle, una stampa cromogenica su Dibond dalle dimensioni di 127x127 cm, è una potente allegoria visiva realizzata nel 2024. Quest'opera è stata concepita in occasione della mostra Oltre il reale: David LaChapelle a Bologna, che si svolge dal 1° febbraio al 15 marzo presso la Galleria Cavour 1959.
+
+                                    L'immagine reinterpreta il mito biblico della Torre di Babele in chiave contemporanea, fondendo elementi di critica sociale con il tipico linguaggio visivo e onirico dell’artista. Al centro della scena si erge una torre monumentale, simbolo dell’arroganza umana e dell’ambizione collettiva, resa ancora più drammatica dal crollo in corso, da cui fuoriescono macerie che si stagliano contro un cielo apocalittico. Sullo sfondo, una distesa di luci urbane evoca la vastità delle metropoli moderne, creando un contrasto tra il simbolismo antico e il caos odierno.
+
+                                    In primo piano, un gruppo di figure umane disperate si contorce in pose espressive e teatrali, incarnando il dramma della confusione linguistica e dell'inevitabile collasso della comunicazione. I corpi, raffigurati con una crudezza quasi scultorea, riflettono la vulnerabilità dell’umanità dinanzi alla propria hybris. Le espressioni esasperate e i gesti amplificati richiamano la teatralità barocca, ma con un’estetica intensamente contemporanea.
+
+                                    LaChapelle unisce il sacro e il profano, il passato e il presente, esplorando temi universali come il fallimento dell’unità, il consumismo sfrenato e l’instabilità sociale. L’opera, ricca di dettagli e di significati stratificati, si colloca perfettamente nel contesto della mostra bolognese, offrendo un’esperienza visiva che invita a riflettere sulle contraddizioni della società moderna.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                INFORMAZIONI AGGIUNTIVE
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled">
+                                    <li><strong>SKU:</strong> LACD-150125-01</li>
+                                    <li><strong>Tecnica:</strong> Stampa cromogenica</li>
+                                    <li><strong>Edition:</strong> Edizione Limitata di 3 Esemplari</li>
+                                    <li><strong>Supporto:</strong> Dibond</li>
+                                    <li><strong>Base:</strong> 127 cm</li>
+                                    <li><strong>Altezza:</strong> 127 cm</li>
+                                    <li><strong>Anno:</strong> 2025</li>
+                                    <li><strong>Nota:</strong> Firmata in originale</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                L'ARTISTA: DAVID LACHAPELLE
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                            <div class="accordion-body">
+                                <h3 class="fw-bold">DAVID LACHAPELLE - OPERE E STILE</h3>
+                                <p>Lo stile unico e riconoscibile è un tratto caratteristico delle fotografie di David LaChapelle: opere surreali, caratterizzate da colori brillanti e fluo vanno ad accentuare composizioni fotografiche oniriche al limite del bizzarro.
+
+                                    Definito come “il Fellini della fotografia”, LaChapelle ha uno stile riconducibile al Barocco a causa della presenza volutamente eccessiva di elementi nei suoi scatti. Le sue fotografie sono caratterizzate da una spiccata ironia e da una visione chiara della società contemporanea.
+                                    
+                                    I suoi scatti raccontano il mondo moderno a modo suo, molto Pop e con pochi intellettualismi. Le opere sono frutto di un lavoro artigiano in cui le composizioni sono elaborate e i colori sono saturi.
+                                    
+                                    La fotografia di LaChapelle non è puro reportage, ma vera e propria arte scenica dove ogni scatto nasce da un progetto e da un’esigenza nel raccontare la società moderna.
+                                    
+                                    Nel 1991 il New York Times scriveva: “LaChapelle influenzerà sicuramente il lavoro di una generazione… allo stesso modo in cui il signor Avedon è stato il pioniere di ciò che è familiare oggi.”
+                                    
+                                    La sua influenza nel corso degli anni è stata molto importante e discussa tanto che il maestro della fotografia di moda Richard Avedon dichiarò che tra i numerosi fotografi che negli anni avevano realizzato degli scatti surreali, LaChapelle è stato l’unico ad avere il potenziale per essere “il Magritte del suo genere”.
+                                    
+                                    Tra le sue maggiori influenze, oltre a Michelangelo, ci sono artisti come Salvador Dalì, Jeff Koons e Cindy Sherman e i pittori Caravaggio e Andrea Pozzo.
+                                    
+                                    Oggi la produzione artistica di LaChapelle mette in risalto la tematica ambientale. L’artista ha creato una serie di lavori che pongono l’accento sul rapporto tra le costruzioni realizzate dall’uomo e la natura, riflettendo su come queste interferiscano con il paesaggio circostante.</p>                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                SPEDIZIONE E CONSEGNA
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                            <div class="accordion-body">
+                                Dettagli sulle modalità di spedizione e tempi di consegna dell'opera.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sezione Commenti -->
+        <div class="container-sm mt-5" id="commentsSection">
+            <div class="accordion" id="commentAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseComment">
+                            Lascia un Commento
+                        </button>
+                    </h2>
+                    <div id="collapseComment" class="accordion-collapse collapse" data-bs-parent="#commentAccordion">
+                        <div class="accordion-body">
+                            <!-- Form per inviare un commento -->
+                            <form id="commentForm" class="mb-4">
+                                <div class="mb-3">
+                                    <label for="commenterName" class="form-label">Il tuo nome</label>
+                                    <input type="text" class="form-control" id="commenterName" placeholder="Inserisci il tuo nome" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="commentText" class="form-label">Il tuo commento</label>
+                                    <textarea class="form-control" id="commentText" rows="4" placeholder="Scrivi un commento..." required></textarea>
+                                </div>
+                                <a href="login.html"><button type="submit" class="btn btn-primary w-100">Invia Commento</button></a>
+                            </form>
+
+                            <!-- Lista dei commenti -->
+                            <div id="commentsList" style="max-height: 300px; overflow-y: auto;">
+                                <!-- Commento 1 -->
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Marco Bianchi</h5>
+                                        <p class="card-text">Mi piace moltissimo questa opera! La reinterpretazione della Torre di Babele è davvero impressionante. Complimenti a David LaChapelle!</p>
+                                    </div>
+                                </div>
+                                <!-- Commento 2 -->
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Anna Verdi</h5>
+                                        <p class="card-text">Un'opera incredibile. La scena di distruzione e la critica sociale sono davvero potenti. Davvero un artista straordinario!</p>
+                                    </div>
+                                </div>
+                                <!-- Commento 3 -->
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Marco Rossi</h5>
+                                        <p class="card-text">Amo la visione di LaChapelle! Ogni scatto sembra raccontare una storia. Non vedo l'ora di vedere più opere di questo tipo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid my-5">
+            <h2 class="text-center mb-4" style="font-weight: bold; letter-spacing: 1px; font-size: 20px;">━━━━━━━━━━━━ ALTRE OPERE DI DAVID LACHAPELLE ━━━━━━━━━━━━</h2>
+        
+            <div id="lachapelleGallery" class="carousel slide position-relative" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row text-center">
+                            <div class="col-md-3"><img src='images/photo1.jpg' class="img-fluid w-75" alt='Tower of Babel'><p>TOWER OF BABEL</p></div>
+                            <div class="col-md-3"><img src='images/photo2.jpg' class="img-fluid w-75" alt='Uma Thurman : Beauties Bloom'><p>Uma Thurman : Beauties Bloom</p></div>
+                            <div class="col-md-3"><img src='images/photo3.jpg' class="img-fluid w-75" alt='Death by Hamburger'><p>Death by Hamburger</p></div>
+                            <div class="col-md-3"><img src='images/photo4.jpg' class="img-fluid w-75" alt='Amanda as Andy Warhol's Marilyn'><p>Amanda as Andy Warhol's Marilyn</p></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row text-center">
+                            <div class="col-md-3"><img src='images/photo5.jpg' class="img-fluid w-75" alt='I Buy a Big Car for Shopping'><p>I Buy a Big Car for Shopping</p></div>
+                            <div class="col-md-3"><img src='images/photo10.jpg' class="img-fluid w-75" alt='Faye Dunaway: Day of the Locust'><p>Faye Dunaway: Day of the Locust</p></div>
+                            <div class="col-md-3"><img src='images/photo11.jpg' class="img-fluid w-75" alt='Revelations'><p>Revelations</p></div>
+                            <div class="col-md-3"><img src='images/photo12.jpg' class="img-fluid w-75" alt='Collapse in a Garden'><p>Collapse in a Garden</p></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row text-center">
+                            <div class="col-md-3"><img src='images/photo15.jpg' class="img-fluid w-75" alt='Jesus is my homeboy: American Supper'><p>Jesus is my homeboy: American Supper</p></div>
+                            <div class="col-md-3"><img src='images/photo16.jpg' class="img-fluid w-75" alt='Jesus is my homeboy: American Supper'><p>Jesus is my homeboy: American Supper</p></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev position-absolute" type="button" data-bs-target="#lachapelleGallery" data-bs-slide="prev" style="left: -50px;">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next position-absolute" type="button" data-bs-target="#lachapelleGallery" data-bs-slide="next" style="right: -50px;">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        
+<!-- Footer -->
+<footer class="footer bg-dark text-light py-3">
+    <div class="container text-center">
+        <p class="mb-2">
+            &copy; 2025 David LaChapelle | 
+            <a href="web-project-plan.html" target="_blank" class="text-light">Web Project Plan</a> |
+            Realizzato da Ilaria Iezzi
+        </p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-light"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
+
+
+    </div>
+
+    
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

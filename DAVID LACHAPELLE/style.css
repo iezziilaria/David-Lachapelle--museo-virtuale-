@@ -1,0 +1,193 @@
+body {
+    background-color: #eaeaea;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 50px;
+    position: relative;
+}
+.cover-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    position: relative;
+}
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+}
+.highlight {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+}
+.image-overlay {
+    position: absolute;
+}
+.image1 { top: -100px; left: -100px; width: 120px; }
+.image2 { top: -135px; right: -115px; width: 140px; }
+.image3 { bottom: -170px; left: -70px; width: 160px; }
+.image4 { bottom: -180px; right: -130px; width: 200px; }
+.image5 { bottom: -40px; right: 560px; width: 130px; }
+.image6 { bottom: -40px; right: -150px; width: 130px; }
+.subtext {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+
+
+/* Sezione Descrizione del Sito */
+#about {
+    padding: 40px 0;
+    background-color: #fff;
+    text-align: center;
+    color: #333;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.btn-primary{
+    border-radius: 25px;
+    padding: 10px 20px;
+    height: 40px;
+    background-color: rgb(148, 22, 148);
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+
+/* Stili per la search bar */
+.search-bar {
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto 30px auto; /* Distanza dalla galleria */
+    padding: 0;
+}
+
+.search-input {
+    border-radius: 25px; /* Rende l'input arrotondato */
+    padding-left: 20px; /* Spazio a sinistra per il testo */
+    height: 40px;
+    width: 100%; /* Input si adatta alla larghezza */
+}
+
+.search-button {
+    border-radius: 25px;
+    padding: 10px 20px;
+    height: 40px;
+    background-color: rgb(148, 22, 148);
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Stili per la galleria */
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto; /* Mantiene le proporzioni */
+    border-radius: 10px;
+    max-height: 300px; /* Imposta un'altezza massima */
+    object-fit: cover; /* Evita distorsioni */
+    margin-bottom: 10px; /* Aggiunge spazio tra immagine e testo */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.3); /* Ingrandisce l'immagine del 10% */
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* Footer */
+.footer {
+    background-color: #111;
+    color: #ddd;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer .social-links a {
+    color: #ddd;
+    margin: 0 8px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.2s;
+}
+
+.footer .social-links a:hover {
+    color: rgb(148, 22, 148);
+    transform: scale(1.1);
+}
+
+
+/* Social Media Icons */
+.social-links i {
+    transition: transform 0.3s;
+}
+
+.social-links i:hover {
+    transform: scale(1.2);
+}
+
+/* Margine superiore per separare dal contenuto principale */
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.mx-2 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        padding: 30px;
+    }
+
+    .image {
+        height: 30vh;
+    }
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David LaChapelle - Galleria</title>
+
+    <!-- Font & Bootstrap Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.html">
+    <link rel="stylesheet" href="opere.html">
+
+    <!-- Dublin Core-->
+    <meta name="DC.title" content="David LaChapelle - login">
+    <meta name="DC.creator" content="Ilaria Iezzi">
+    <meta name="DC.subject" content="Fotografia, Arte, Cultura Pop">
+    <meta name="DC.description" content="Una collezione digitale delle opere di David LaChapelle.">
+    <meta name="DC.publisher" content="David Lachapelle">
+    <meta name="DC.date" content="2024-03-10">
+    <meta name="DC.type" content="Website">
+    <meta name="DC.format" content="text/html">
+    <meta name="DC.language" content="it">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea;
+            padding: 50px;
+        }
+        
+        .login-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .login-box {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+
+        /* Footer */
+        .footer {
+            background-color: #111;
+            color: #ddd;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .footer .social-links a {
+            color: #ddd;
+            margin: 0 8px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.2s;
+        }
+
+        .footer .social-links a:hover {
+            color: rgb(148, 22, 148);
+            transform: scale(1.1);
+        }
+
+
+        /* Social Media Icons */
+        .social-links i {
+            transition: transform 0.3s;
+        }
+
+        .social-links i:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header shadow-sm">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo/Nome Sito -->
+                <a href="index.html" class="text-decoration-none text-dark fw-bold fs-4">David LaChapelle</a>
+                
+                <!-- Icone Account e Lista Desideri -->
+                <div>
+                    <a href="login.html" class="text-dark me-3"><i class="fas fa-heart fs-4"></i></a>
+                    <a href="login.html" class="text-dark"><i class="fas fa-user fs-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="opere.html">Opere</a></li>
+                    <li class="nav-item"><a class="nav-link" href="artista.html">Artista</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="login-container">
+            <div class="login-row">
+                <div class="login-box">
+                    <h3 class="text-center">Clienti registrati</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">ACCEDI</button>
+                        <div class="text-center mt-2">
+                            <a href="#">Hai dimenticato la password?</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="login-box">
+                    <h4 class="text-center">Nuovi Clienti</h4>
+                    <p class="text-center">La creazione di un account ha molti vantaggi: check-out veloce, salvare più di un indirizzo, tenere traccia degli ordini e altro ancora.</p>
+                    <a href="register.html" class="btn btn-outline-dark w-100">Crea un Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer class="footer bg-dark text-light py-3">
+    <div class="container text-center">
+        <p class="mb-2">
+            &copy; 2025 David LaChapelle | 
+            <a href="web-project-plan.html" target="_blank" class="text-light">Web Project Plan</a> |
+            Realizzato da Ilaria Iezzi
+        </p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-light"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
