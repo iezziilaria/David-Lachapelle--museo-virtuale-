@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David LaChapelle - Galleria</title>
+
+    <!-- Font & Bootstrap Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.html">
+    <link rel="stylesheet" href="opere.html">
+
+    <!-- Dublin Core-->
+    <meta name="DC.title" content="David LaChapelle - Galleria">
+    <meta name="DC.creator" content="Ilaria Iezzi">
+    <meta name="DC.subject" content="Fotografia, Arte, Cultura Pop">
+    <meta name="DC.description" content="Una collezione digitale delle opere di David LaChapelle.">
+    <meta name="DC.publisher" content="David Lachapelle">
+    <meta name="DC.date" content="2024-03-10">
+    <meta name="DC.type" content="Website">
+    <meta name="DC.format" content="text/html">
+    <meta name="DC.language" content="it">
+    <style>
+        /* Stile generale della pagina */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea;
+            padding: 50px;
+        }
+
+        .header {
+            padding: 10px 0;
+        }
+        
+        
+        /* Ordina per e Filtra per sulla stessa riga */
+
+        /* Colore di default (quando l'accordion è chiuso) */
+        .custom-accordion-btn {
+            color: rgb(9, 2, 2); /* Colore del testo bianco quando l'accordion è chiuso */
+            background-color: transparent; /* Sfondo trasparente quando chiuso */
+            border: 1px solid #ccc; /* Colore del bordo */
+        }
+
+        /* Colore quando l'accordion è attivo (espanso) */
+        .custom-accordion-btn:not(.collapsed) {
+            color: rgb(148, 22, 148); /* Colore del testo quando attivo */
+            background-color: rgba(148, 22, 148, 0.1); /* Colore di sfondo quando attivo */
+        }
+
+        
+
+        .filters-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .filters-container select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            margin-left: 10px;
+            width: 200px;
+        }
+
+        .filters-container h5 {
+            font-size: 1.1rem;
+            color: #555;
+            margin: 0;
+            font-weight: 600;
+        }
+
+
+
+        /* Stili per la search bar */
+        .search-bar {
+            justify-content: center;
+            max-width: 400px;
+            margin: 0 auto 30px auto; /* Distanza dalla galleria */
+            padding: 0;
+        }
+
+        .search-input {
+            border-radius: 25px; /* Rende l'input arrotondato */
+            padding-left: 20px; /* Spazio a sinistra per il testo */
+            height: 40px;
+            width: 100%; /* Input si adatta alla larghezza */
+        }
+
+        .search-button {
+            border-radius: 25px;
+            padding: 10px 20px;
+            height: 40px;
+            background-color: rgb(148, 22, 148);
+            color: white;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+
+
+        /* Titolo della galleria */
+        h2 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        /* Card (opera) */
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Immagine della card */
+        .card-img-top {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        /* Corpo della card */
+        .card-body {
+            text-align: center;
+        }
+
+        /* Titolo dell'opera */
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Descrizione dell'opera */
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Bottone */
+        .btn-primary {
+            background-color: rgb(148, 22, 148);
+            border-color: rgb(148, 22, 148);
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        /* Margine inferiore per le card */
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+
+        /* Margine superiore per separare dal contenuto principale */
+        .mt-5 {
+            margin-top: 3rem;
+        }
+
+        .mx-2 {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+       
+        .social-links a {
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #f1f1f1; /* Cambia colore al passaggio del mouse */
+        }
+
+
+
+        /* Footer */
+        .footer {
+            background-color: #111;
+            color: #ddd;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .footer .social-links a {
+            color: #ddd;
+            margin: 0 8px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.2s;
+        }
+
+        .footer .social-links a:hover {
+            color: rgb(148, 22, 148);
+            transform: scale(1.1);
+        }
+
+
+        /* Social Media Icons */
+        .social-links i {
+            transition: transform 0.3s;
+        }
+
+        .social-links i:hover {
+            transform: scale(1.2);
+        }
+       
+    </style>
+
+</head>
+<body>
+
+    <header class="header shadow-sm">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo/Nome Sito -->
+                <a href="index.html" class="text-decoration-none text-dark fw-bold fs-4">David LaChapelle</a>
+                
+                <!-- Icone Account e Lista Desideri -->
+                <div>
+                    <a href="login.html" class="text-dark me-3"><i class="fas fa-heart fs-4"></i></a>
+                    <a href="login.html" class="text-dark"><i class="fas fa-user fs-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="opere.html">Opere</a></li>
+                    <li class="nav-item"><a class="nav-link" href="artista.html">Artista</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Galleria delle Opere -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Galleria delle Opere di David LaChapelle</h2>
+
+
+        <!-- Barra di ricerca -->
+        <form class="d-flex search-bar mb-4">
+            <input class="form-control search-input me-2" type="search" placeholder="Cerca opere..." aria-label="Search">
+            <button class="btn btn-primary search-button" type="submit">Cerca</button>
+        </form>
+        
+        <div class="container-sm mt-5" id="filtersSection">
+            <div class="accordion" id="filterAccordion">
+                <!-- Accordion Item - Filtra per -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilters">
+                            Filtra per
+                        </button>
+                    </h2>
+                    <div id="collapseFilters" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                        <div class="accordion-body">
+                            <!-- Dimensione -->
+                            <h6>Dimensione</h6>
+                            <select class="form-select mb-3">
+                                <option value="grande">Grande (31 elementi)</option>
+                                <option value="medio">Medio (33 elementi)</option>
+                            </select>
+        
+                            <!-- Supporto -->
+                            <h6>Supporto</h6>
+                            <select class="form-select mb-3">
+                                <option value="dibond">Dibond (64 elementi)</option>
+                                <!-- Aggiungi altre opzioni di supporto se necessario -->
+                            </select>
+        
+                            <!-- Tecnica -->
+                            <h6>Tecnica</h6>
+                            <select class="form-select mb-3">
+                                <option value="stampa-cromogenica">Stampa cromogenica (22 elementi)</option>
+                                <option value="stampa-pigmenti">Stampa a pigmenti (43 elementi)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Accordion Item - Ordina per -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOrder">
+                            Ordina per
+                        </button>
+                    </h2>
+                    <div id="collapseOrder" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                        <div class="accordion-body">
+                            <select class="form-select">
+                                <option value="a-z">A-Z</option>
+                                <option value="most-viewed">Più visti</option>
+                                <option value="price-high">Prezzo: dal più alto</option>
+                                <option value="price-low">Prezzo: dal più basso</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+
+        <div class="row">
+            <!-- Opera 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="opera1.jpg" class="card-img-top" alt="Opera 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Tower of Babel</h5>
+                        <p class="card-text">2024</p>
+                        <a href="opera1.html" class="btn btn-primary">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Opera 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="opera2.png" class="card-img-top" alt="Opera 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Faye Dunaway: Day of the Locust</h5>
+                        <p class="card-text">1996</p>
+                        <a href="opera2.html" class="btn btn-primary">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Opera 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="opera3.jpg" class="card-img-top" alt="Opera 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Revelations</h5>
+                        <p class="card-text">2019</p>
+                        <a href="opera3.html" class="btn btn-primary">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Opera 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="opera4.jpg" class="card-img-top" alt="Opera 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Collapse in a Garden</h5>
+                        <p class="card-text"> 1995  </p>
+                        <a href="opera4.html" class="btn btn-primary">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Opera 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="opera5.jpg" class="card-img-top" alt="Opera 5">
+                    <div class="card-body">
+                        <h5 class="card-title">After the Deluge: Cathedral</h5>
+                        <p class="card-text">2007</p>
+                        <a href="opera5.html" class="btn btn-primary">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Opera 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="opera6.jpg" class="card-img-top" alt="Opera 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Jesus is my homeboy: American Supper</h5>
+                        <p class="card-text">2003</p>
+                        <a href="opera6.html" class="btn btn-primary">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer class="footer bg-dark text-light py-3">
+    <div class="container text-center">
+        <p class="mb-2">
+            &copy; 2025 David LaChapelle | 
+            <a href="web-project-plan.html" target="_blank" class="text-light">Web Project Plan</a> |
+            Realizzato da Ilaria Iezzi
+        </p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="text-light"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
